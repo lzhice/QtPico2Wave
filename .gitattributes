@@ -9,6 +9,10 @@
 *.h++   text diff=cpp
 *.hh    text diff=cpp
 
+.pro  linguist-language=Qt
+Makefile linguist-vendored
+
+
 # Compiled Object files
 *.slo   binary
 *.lo    binary
