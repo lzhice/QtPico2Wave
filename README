@@ -1,0 +1,28 @@
+QtPico2Wavev0.1
+***************
+Qt interface to pico2wave, written by B.Sudarsan
+--------------------
+
+Dependencies(Tested only on Ubuntu 16.04):
+--------------------------------------
+alsa-utils
+mpv
+sed
+
+Compile:
+--------
+qmake
+make
+
+Usage:
+-------
+* Open a text file
+* Select the starting line, and the number of lines to read(max 2000 lines)
+* Pressing 'play/stop' calls pico2wave to read out the selected region out loud, while the gui scrolls to highlight the selected text.
+* Select the xiph stream of interest in the menu and check 'Jam!' to have the computer narrate the text with background music!
+* Unchecking 'Jam!' stops the background music.
+* Add more streams to the menu by adding more links to the ".stations" file in the home folder. Any stream that mpv can parse is usable.
+
+License:
+--------
+GNU GPL v2.0
