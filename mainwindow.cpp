@@ -117,7 +117,7 @@ void MainWindow::on_playStop_clicked()
    {
     ui->playStop->setIcon(QIcon(pausepic.scaled(w,h,Qt::KeepAspectRatio)));
     QString program2 = "./tts.sh "+QString::number(line_number)+" "+QString::number(number_of_lines)+" "+fileName;
-    sh.startDetached(program2);
+    sh.startDetached(program2);//,{QString::number(line_number),QString::number(number_of_lines),fileName},".",&pid2);
     READING_NOW=true;
     ui->startPos->setDisabled(true);
     ui->numLines->setDisabled(true);
@@ -156,12 +156,14 @@ void MainWindow::on_checkBox_toggled(bool checked)
     {
         auto num = ui->comboBox->currentIndex();
         QString station = ui->comboBox->itemText(num);
-        sh3.startDetached("mpv "+station);
+        sh3.startDetached("mpv",{station},".",&pid3);
+        //pid3 = sh3.processId();
+        qDebug()<<pid3;
         sh3.close();
     }
     else
     {
-        sh3.execute("killall -9 mpv");
+        sh3.execute("kill "+QString::number(pid3));
         sh3.close();
     }
 }

@@ -57,6 +57,7 @@ private:
     QAction *aboutme;
     int w;
     int h;
+    qint64 pid3,pid2,pid1;
     bool READING_NOW;
 };
 
