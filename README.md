@@ -1,2 +1,2 @@
 # QtPico2Wave
-My Qt interface to read text files using pico2wave
+My Qt interface to read text files out loud using pico2wave TTS
